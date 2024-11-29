@@ -54,7 +54,14 @@ body, html {
   font-weight: bold;
   font-size: 2rem;
 }
-
+.box {
+  width: 600px;
+  height: 300px;
+  background-color: white;
+  padding: 20px; 
+  border-radius: 10px; 
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
 .texth2 {
   font-family: 'Poppins', sans-serif;
   color: rgb(32, 32, 32);
@@ -82,7 +89,7 @@ body, html {
   background-color: black;
   border: none;
   border-radius: 15px;
-  padding: 10px 125px;
+  padding: 10px 100px;
   margin-top: 25px;
   cursor: pointer;
   transition: background-color 0.3s ease;
