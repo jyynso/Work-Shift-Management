@@ -28,7 +28,9 @@ const DashboardLogin = () => {
 
       <div className="formContainer">
       <h1 className="textOnTop" 
-      style={{fontSize:'60px', paddingBottom:0}}>Welcome</h1>
+      style={{fontSize:'60px', 
+              paddingBottom:0,
+              marginTop:'0'}}>Welcome</h1>
 
         <h1 className="texth1" 
         style={{margin:0, padding:0}}>Login</h1>
