@@ -3,16 +3,16 @@
 import { useState } from 'react';
 import {useRouter} from 'next/navigation';
 
-const DashboardLogin = () => {
+const SignIn = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const router = useRouter(); 
 
   const handlesignin = () => {
-    router.push('/SignIn');
+    router.push('/signin');
   }
   const btnloginclick = () => {
-    router.push('/dashboardAdmin');
+    router.push('/dashboardUser');
   };
 
   const handleUsernameChange = (event) => {
@@ -41,16 +41,16 @@ const DashboardLogin = () => {
         <h1 className="texth1" 
         style={{marginTop:'0', 
                 padding:0,
-                marginBottom:'0'}}>Login</h1>
+                marginBottom:'0'}}>Sign Up</h1>
 
-        <h1 className='texth2'
+        {/* <h1 className='texth2'
         style={{marginTop:'12px',
                 padding:'0',
                 marginBottom:'0',
                 fontSize:'1rem',
                 color:'#D43434',
                 fontWeight:'bold',
-                cursor:'pointer'}} onClick={handlesignin}>Sign up</h1>
+                cursor:'pointer'}} onClick={handlesignin}>Sign up</h1> */}
         </div>
 
         <section style={{paddingBottom: '20px'}}>
@@ -74,8 +74,9 @@ const DashboardLogin = () => {
           />
         </section>
         <section>
-        <button className='black_btn' onClick={btnloginclick}>
-          Login
+        <button className='black_btn'
+        style={{padding:'10px 90px'}} onClick={btnloginclick}>
+          Sign Up
         </button>
         </section>
 
@@ -85,5 +86,5 @@ const DashboardLogin = () => {
   );
 };
 
-export default DashboardLogin;
+export default SignIn;
 

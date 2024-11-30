@@ -2,9 +2,12 @@
 
 import {useRouter} from 'next/navigation';
 
-const dashboardUser = () => {
+const dashboardAdminSchedule = () => {
   const router = useRouter();
 
+  const handleview = () => {
+    router.push();
+  }
   const handlelogut = () => {
     router.push('/');
   }
@@ -27,7 +30,7 @@ const dashboardUser = () => {
                marginTop:'0px',
                padding:'0',
                marginBlock:'0',
-               gap:'5px'
+               gap:'10px'
           }}>
           <h1 className='textOnTop' 
               style={{
@@ -36,25 +39,25 @@ const dashboardUser = () => {
                 marginLeft:'20px',
                 marginTop:'10px',
                 marginBottom:'20px'
-              }}>Hello there, </h1>
+              }}>Hi, </h1>
           <h1 className='textOnTop'
               style={{
                 fontSize:'2.5rem',
-                color:'#3355D9',
+                color:'#D9C40B',
                 marginTop:'10px',
                 marginBottom:'10px',
                 padding:'0'
-              }}> Pedro Pedro</h1>
+              }}>Admin</h1>
         </div>
           <p className='texth2'
               style={{
                 marginLeft: '20px',
                 marginTop:'5px',
                 paddingBottom:'0'
-              }}>This is your schedule records so far</p>
+              }}>Welcome to the admin dashboard</p>
         </div>
 
-        <div>
+        <div style={{padding:0}}>
           <span className='texth2' 
                 style={{
                   cursor: 'pointer',
@@ -64,7 +67,7 @@ const dashboardUser = () => {
                   fontWeight: 'bold',
                   cursor:'pointer'
                 }} onClick={handlelogut}>
-            Log Out
+            Go back
           </span>
           <p className='texth2'
               style={{
@@ -84,41 +87,23 @@ const dashboardUser = () => {
       <section style={{
         display: 'flex',
         justifyContent: 'flex-start', 
-        gap: '20px'
+        gap: '20px',
+        alignItems:'flex-start'
       }}>
 
         <div className='box'
             style={{
-              marginLeft: '20px',
-              width:'700px',
+              marginLeft: '155px',
+              width:'800px',
               height:'340px'
             }}>
-        </div>
-        <div>
-        <button className='texth2'
-              style={{
-                padding: '50px 125px',
-                marginTop:'10px',
-                marginLeft:'10px',
-                backgroundColor: '#D72B2B',
-                color: 'white',
-                border: 'none',
-                borderRadius: '10px',
-                cursor: 'pointer',
-                fontWeight:'bold',
-                boxshadow: '0 4px 6px rgba(0, 0, 0, 0.2)'
-              }}>
-                Request Button
-        </button>
-      
-        <div className='box'
+        <h1 className='texth2'
             style={{
-              marginTop:'20px',
-              marginLeft: '10px',
-              width:'400px',
-              height:'191px'
-            }}>
-        </div>
+                fontWeight:'bold',
+                fontSize:'1.2rem',
+                color:'#4C4C4C',
+                padding:'15px 45px'
+            }}>View all records</h1>
         </div>
 
       </section>
@@ -126,4 +111,4 @@ const dashboardUser = () => {
   );
 };
 
-export default dashboardUser;
+export default dashboardAdminSchedule;
