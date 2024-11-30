@@ -6,10 +6,7 @@ const dashboardAdminSchedule = () => {
   const router = useRouter();
 
   const handleview = () => {
-    router.push();
-  }
-  const handlelogut = () => {
-    router.push('/');
+    router.push('/dashboardAdmin');
   }
   return (
     <div className='container'
@@ -66,7 +63,7 @@ const dashboardAdminSchedule = () => {
                   top: '30px',
                   fontWeight: 'bold',
                   cursor:'pointer'
-                }} onClick={handlelogut}>
+                }} onClick={handleview}>
             Go back
           </span>
           <p className='texth2'
@@ -103,7 +100,7 @@ const dashboardAdminSchedule = () => {
                 fontSize:'1.2rem',
                 color:'#4C4C4C',
                 padding:'15px 45px'
-            }}>View all records</h1>
+            }}>All users</h1>
         </div>
 
       </section>
