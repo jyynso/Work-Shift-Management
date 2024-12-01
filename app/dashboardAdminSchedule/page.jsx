@@ -1,12 +1,20 @@
 'use client'
 
 import {useRouter} from 'next/navigation';
+import { useState } from 'react';
+import Modal from '@component/modal';
 
 const dashboardAdminSchedule = () => {
   const router = useRouter();
 
   const handleview = () => {
     router.push('/dashboardAdmin');
+  }
+  const [ismodalOpen, setmodalOpen] = useState(false);
+
+  const showmodal = () => {
+    setmodalOpen(!ismodalOpen);
+
   }
   return (
     <div className='container'
@@ -96,11 +104,25 @@ const dashboardAdminSchedule = () => {
             }}>
         <h1 className='texth2'
             style={{
-                fontWeight:'bold',
-                fontSize:'1.2rem',
-                color:'#4C4C4C',
-                padding:'15px 45px'
+              fontWeight:'bold',
+              fontSize:'1.2rem',
+              color:'#4C4C4C',
+              padding:'15px 45px'
             }}>All users</h1>
+        <h1 className='texth2'
+             style={{
+              fontSize:'1.2rem',
+              color:'#4C4C4C',
+              padding:'5px 60px', 
+              cursor:'pointer' 
+             }} onClick={showmodal}>username</h1>
+        <Modal isOpen={ismodalOpen}
+               onClose={showmodal}
+               title='Jose deCarlito'>
+        <p>lreshdhs dhs dshhs shs djpaks hs dsk a sjh sd
+          shdslkj s ldkj sl dh alkh sdlakh h
+        </p>
+        </Modal>
         </div>
 
       </section>
