@@ -9,10 +9,12 @@ const DashboardLogin = () => {
   const router = useRouter(); 
 
   const handlesignin = () => {
-    router.push('/SignIn');
+    router.push('/SignIn'); 
   }
+  // conditional statement if user is admin or hindi if yes /dashboardAdmin
+  // else routerpush('/dashboardUser')
   const btnloginclick = () => {
-    router.push('/dashboardAdmin');
+    router.push('/dashboardUser');
   };
 
   const handleUsernameChange = (event) => {
@@ -73,12 +75,14 @@ const DashboardLogin = () => {
           className="inputBox"
           />
         </section>
-        <section>
+        <section> 
+        {/* conditional statement dito, if inserted credential is admin or not */}
+        {/*for now naka set sya na pupunta sa admin dashboard*/}
         <button className='black_btn' onClick={btnloginclick}>
           Login
         </button>
         </section>
-
+  
         
       </div>
     </div>

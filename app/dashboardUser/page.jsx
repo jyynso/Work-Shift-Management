@@ -1,12 +1,27 @@
 'use client'
 
 import {useRouter} from 'next/navigation';
+import {useState} from 'react';
+import Modal from '@component/modalreq/Modalrequest';
+import { eventNames } from 'process';
 
 const dashboardUser = () => {
   const router = useRouter();
+  const [ismodalOpen, setmodalOpen] = useState(false);
+  const [date, setday] = useState('');
+  const [purpose, setpurpose] = useState('');
 
+  const handleday = (event) => {
+    setday(event.target.value);
+  }
+  const handlepurpose = (event) => {
+    setpurpose(event.target.value);
+  }
   const handlelogut = () => {
     router.push('/');
+  }
+  const showmodal = () => {
+    setmodalOpen(!ismodalOpen);
   }
   return (
     <div className='container'
@@ -88,11 +103,16 @@ const dashboardUser = () => {
       }}>
 
         <div className='box'
-            style={{
+             style={{
               marginLeft: '20px',
               width:'700px',
               height:'340px'
             }}>
+        <h1 className='texth2' 
+            style={{
+              marginLeft:'20px',
+              fontWeight:'bold'
+        }}>Your Schedule</h1>     
         </div>
         <div>
         <button className='texth2'
@@ -107,9 +127,37 @@ const dashboardUser = () => {
                 cursor: 'pointer',
                 fontWeight:'bold',
                 boxshadow: '0 4px 6px rgba(0, 0, 0, 0.2)'
-              }}>
-                Request Button
+              }} onClick={showmodal}>
+              Request Button
         </button>
+        <Modal isOpen={ismodalOpen}
+               onClose={showmodal}
+               title='Request Leave'>
+        <section style={{paddingBottom: '20px'}}>
+        <h1 className="texth2" 
+            style={{
+              paddingTop:'0'
+            }}>What day?</h1>
+        <input
+          type="text"
+          placeholder="What day?"
+          value={date}
+          onChange={handleday}
+          className="inputBox"
+        />
+        </section>
+
+        <section className='font-Poppins'>
+          <h1 className="texth2 font-Poppins">What purpose?</h1>
+          <input
+          type="text"
+          placeholder="What purpose?"
+          value={purpose}
+          onChange={handlepurpose}
+          className="inputBox"
+          />
+        </section>
+        </Modal>
       
         <div className='box'
             style={{
@@ -118,6 +166,12 @@ const dashboardUser = () => {
               width:'400px',
               height:'191px'
             }}>
+        <h1 className='texth2' 
+            style={{
+              padding:'20px',
+              fontWeight:'bold'
+
+            }}>Total Absences</h1>
         </div>
         </div>
 

@@ -1,8 +1,8 @@
-import { hasUncaughtExceptionCaptureCallback } from 'process';
+
 import React from 'react';
 
 const Modal = ({ isOpen, onClose, title, children }) => {
-  if (!isOpen) return null; // Render nothing if the modal is closed
+  if (!isOpen) return null; 
 
   return (
     <div style={styles.overlay}>

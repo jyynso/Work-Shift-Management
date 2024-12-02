@@ -2,7 +2,7 @@
 
 import {useRouter} from 'next/navigation';
 import { useState } from 'react';
-import Modal from '@component/modal';
+import Modal from '@component/modalschedview/modal';
 
 const dashboardAdminSchedule = () => {
   const router = useRouter();
@@ -11,19 +11,19 @@ const dashboardAdminSchedule = () => {
     router.push('/dashboardAdmin');
   }
   const [ismodalOpen, setmodalOpen] = useState(false);
-
+// each username inside must be clickable
   const showmodal = () => {
     setmodalOpen(!ismodalOpen);
 
   }
-  return (
+  return (  
     <div className='container'
          style={{
            flexDirection: 'column',
            alignItems: 'flex-start',
            padding: '50px',
            paddingTop:'15px',
-           marginTop:'0',
+           marginTop:'0', 
            height:'auto',
            width:'100%'
          }}>
@@ -118,9 +118,8 @@ const dashboardAdminSchedule = () => {
              }} onClick={showmodal}>username</h1>
         <Modal isOpen={ismodalOpen}
                onClose={showmodal}
-               title='Jose deCarlito'>
-        <p>lreshdhs dhs dshhs shs djpaks hs dsk a sjh sd
-          shdslkj s ldkj sl dh alkh sdlakh h
+               title='name ni user'>
+        <p>schedule nya dito 
         </p>
         </Modal>
         </div>
